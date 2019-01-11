@@ -3,6 +3,7 @@ path:  "/docs/late-notification/index.md"
 title: "Paytm for Developers: Understanding Late notification of transaction"
 ---
 
+import configConstant from '../../../state/configConstant';
 
 # Delayed Notification
 
@@ -15,10 +16,7 @@ Paytm polls the transaction status from bank for next 72 hours. In case we do no
 ---
 
 In case we receive a delayed/no response from the bank, posting transaction response on callback URL is not feasible. There are two ways for merchant to get status of transaction:
-
-* Via Webhook - Paytm sends a server to server (S2S) response in key value pair on the configured URL. S2S response is sent only when transaction has reached a terminal state (success/fail). To configure the URL, kindly connect with our integration/helpdesk team
-
-* Via Polling - setup a polling process after regular intervals using <a href="/docs/transaction-status-api/">Transaction status API</a>. To get best results out of status query, you should check the status 8 times in 72 hours by the schedule below 
+<ul><li><p>Via Webhook - Paytm sends a server to server (S2S) response in key value pair on the configured URL. S2S response is sent only when transaction has reached a terminal state (success/fail). To configure the URL, kindly connect with our integration/helpdesk team</p></li><li><p>Via Polling - setup a polling process after regular intervals using <a href={`${configConstant.apiUrl.apiHost}/docs/transaction-status-api/`}>Transaction status API</a>. To get best results out of status query, you should check the status 8 times in 72 hours by the schedule below </p></li></ul>
 
 | Status Query| Status query interval <br/>(From the time transaction was sent to Paytm)|
 | --- | --- | 

@@ -4,6 +4,8 @@ import Link from "gatsby-link";
 import { Helmet } from "react-helmet";
 import {connect} from 'react-redux';
 
+import configConstant from '../../state/configConstant';
+
 class Home extends Component {
 
     constructor(props) {
@@ -41,7 +43,7 @@ class Home extends Component {
                     <div className='head-left stage-detail'>
                         <h1 className='big-head-txt'>Integrate Payments with Paytm</h1>
                         <p className='small-head-txt'>
-                        Add <a href="https://business.paytm.com/payment-gateway" target="_blank">Paytm Payment Gateway</a> to your mobile app or website. Collect online payments from your customers using UPI, Debit/Credit Cards, 50+ NetBanking options and Paytm Wallet.<br/><br/> The only requirement to get started is -
+                        Add <a href={`${configConstant.apiUrl.apiHost}/payment-gateway`} target="_blank">Paytm Payment Gateway</a> to your mobile app or website. Collect online payments from your customers using UPI, Debit/Credit Cards, 50+ NetBanking options and Paytm Wallet.<br/><br/> The only requirement to get started is -
                         </p>
                         <button className='btn btn-default small' onClick={this.handleChange}>Create account</button>
                         

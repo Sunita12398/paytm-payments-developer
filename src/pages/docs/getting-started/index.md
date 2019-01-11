@@ -6,11 +6,12 @@ title: "Paytm for Developers: Getting Started"
 
 import * as style from './style.module.scss';
 import MdButton from './../../../components/md-button/index';
+import configConstant from '../../../state/configConstant';
 
 
 <div className={`${style.grid} ${style.justifyBetween}`}>
-    <div className={`${style.headLeft}`}><h1>Start Building with Paytm</h1><h3>Paytm Payment Gateway provides a secure, PCI-compliant way to accept Debit/Credit card, Net-Banking, UPI and Paytm wallet payments from your customers</h3><ul><li><MdButton text={`Create account`}></MdButton> or <MdButton text={`login`}></MdButton> using your existing Paytm account</li><li>Generate your <a href='https://dashboard.paytm.com/next/apikeys?src=dev' target="_blank">staging account credentials</a> from the dashboard. These are required 
- to explore Paytm's integration solutions.</li><li>When you are ready to go live, <a href='https://dashboard.paytm.com/next/activate?src=dev' target="_blank">activate your account </a>in the dashboard to get production account credentials</li></ul></div>
+    <div className={`${style.headLeft}`}><h1>Start Building with Paytm</h1><h3>Paytm Payment Gateway provides a secure, PCI-compliant way to accept Debit/Credit card, Net-Banking, UPI and Paytm wallet payments from your customers</h3><ul><li><MdButton text={`Create account`}></MdButton> or <MdButton text={`login`}></MdButton> using your existing Paytm account</li><li>Generate your <a href={`${configConstant.apiUrl.apiHost}/next/apikeys?src=dev`} target="_blank">staging account credentials</a> from the dashboard. These are required 
+ to explore Paytm's integration solutions.</li><li>When you are ready to go live, <a href={`${configConstant.apiUrl.apiHost}/next/activate?src=dev`} target="_blank">activate your account </a>in the dashboard to get production account credentials</li></ul></div>
     <div className={`${style.headRight}`}><img src='./../../assets/img-start-building-with-paytm.svg' alt='' /></div>
 </div>
 
@@ -18,16 +19,16 @@ import MdButton from './../../../components/md-button/index';
 ## Understanding account credentials
 ---
 
-<a href="https://dashboard.paytm.com/next/apikeys?src=dev" target="_blank">Account credentials</a> are available in your dashboard for both staging and production environment. These credentials consist of -
-
-* **MID (Merchant ID)** - This is a unique identifier provided to every merchant by Paytm. MID is part of your account credentials and is different on staging and production environment. Your staging MID is available <a href="https://dashboard.paytm.com/next/apikeys?src=dev" target="_blank">here</a> and production MID will be available once your activation is complete 
-* **Merchant Key** - This is a unique secret key used for secure encryption of every request. This needs to be kept on server side and <u>should not be shared with anyone</u>
+<span><a href={`${configConstant.apiUrl.apiHost}/next/apikeys?src=dev`} target="_blank">Account credentials</a></span> are available in your dashboard for both staging and production environment. These credentials consist of -
+<ul><li><strong>MID (Merchant ID)</strong> - This is a unique identifier provided to every merchant by Paytm. MID is part of your account credentials and is different on staging and production environment. Your staging MID is available <a href={`${configConstant.apiUrl.apiHost}/next/apikeys?src=dev`} target="_blank">here</a> and production MID will be available once your activation is complete </li><li><strong>Merchant Key</strong> - This is a unique secret key used for secure encryption of every request. This needs to be kept on server side and <u>should not be shared with anyone</u></li></ul>
 
 
 ## Dashboard 
 --- 
 
-The Paytm <a href="https://dashboard.paytm.com" target="_blank">Dashboard</a> is a single window to manage your account -
+<div>
+The Paytm <a href={`https://dashboard.paytm.com`} target="_blank">Dashboard</a> is a single window to manage your account -
+</div>
 
 
 * Activate account to start accepting payments

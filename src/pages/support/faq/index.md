@@ -3,7 +3,7 @@ title: "FAQ's Page"
 path:  "/support/faq/index.md"
 ---
 
-
+import configConstant from '../../../state/configConstant';
 import * as style from './style.module.scss';
 
 
@@ -45,7 +45,9 @@ No, we do not have SDK for hybrid Apps. However we support Paytm Checkout integr
  
 **I have static/HTML website, how can I integrate Paytm?**
 
-Deep integration on HTML website is not possible, you can use our Email/SMS invoicing or <a href="https://business.paytm.com/payment-link">Payment Link feature</a>
+<div>
+    <p>Deep integration on HTML website is not possible, you can use our Email/SMS invoicing or <a href={`${configConstant.apiUrl.apiHost}/payment-link`}>Payment Link feature</a></p>
+</div>
 
 <div className={`${style.space10}`}></div>
 

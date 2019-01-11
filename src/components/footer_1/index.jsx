@@ -1,5 +1,6 @@
 import * as style from './style.module.scss';
 import React from "react";
+import configConstant from '../../state/configConstant';
 
 const Footer = () => (
 	<footer className={`${style.footer}`}>
@@ -10,7 +11,7 @@ const Footer = () => (
 					<p>Paytm’s developer-centric community to resolve technical issue faced while integration</p>
 				</div>
 				<div className={`${style.subFooterBox}`} >
-					<h6 >FAQs <a target="_blank" href="https://developer.paytm.com/support/faq"><img src='/assets/ic-launch.svg' /></a></h6>
+					<h6 >FAQs <a target="_blank" href={`${configConstant.apiUrl.apiHost}/support/faq`}><img src='/assets/ic-launch.svg' /></a></h6>
 					<p>Get Answers to most common questions around integration Paytm</p>
 				</div>
 				<div className={`${style.subFooterBox}`} >

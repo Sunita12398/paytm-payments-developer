@@ -3,6 +3,7 @@ path:  "/docs/refund-management/index.md"
 title: "Paytm for Developers: Understanding Refund Management"
 ---
 
+import configConstant from '../../../state/configConstant';
 
 
 # Refunds
@@ -41,9 +42,10 @@ Bulk refund - Multiple transactions can be refunded at once. To do this, follow 
   * Click on bulk refunds
   * Upload a file in a specified format in either Excel 2007 or 2011 format. Sample file is provided on the panel
   
-### Refund via APIs 
-
-You can also initiate a refund via the <a href="/docs/refund-api/">Refund API</a>. Identifier of transaction against which refund has to be made is order ID (unique parameter for an order in your system) and transaction ID (unique parameter for your order with Paytm passed in transaction response)
+### Refund via APIs
+<div>
+  <p>You can also initiate a refund via the <a href={`${configConstant.apiUrl.apiHost}/docs/refund-api/`}>Refund API</a>. Identifier of transaction against which refund has to be made is order ID (unique parameter for an order in your system) and transaction ID (unique parameter for your order with Paytm passed in transaction response)</p>
+</div>
 
 ## Constraints on refunds
 ---

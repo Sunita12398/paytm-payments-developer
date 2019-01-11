@@ -7,6 +7,7 @@ title: "API Reference - Transaction Status"
 import TransactionWrapperLayoutTxnStatus from '../../../components/txn_wrapper_layout_txn_status';
 import Layout from './../../../components/layout';
 import * as style from './style.module.scss';
+import configConstant from '../../../state/configConstant';
 
 export default ({children,location, pageContext}) => (
         <Layout pageContext={pageContext}>
@@ -31,13 +32,7 @@ export default ({children,location, pageContext}) => (
 <div className={`${style.space10}`}></div>
 
 ## Request Attributes
-
-| | |
-| --- | --- |
-| **MID** String(20) Mandatory| This is a unique identifier provided to every merchant by Paytm. MID is part of your account credentials and is different on staging and production environment. Your staging MIDs is available <a href="https://dashboard.paytm.com/next/apikeys?src=dev" target="_blank">here</a> & production MID will be available once your activation is complete 
-| **ORDERID** String(50) Mandatory| Order ID is merchant’s unique reference ID for a transaction passed in the transaction payload. This is Order ID for which the transaction status needs to be fetched
-| **CHECKSUMHASH** String(108) Mandatory| Signature to avoid tampering. Generated using server side checksum utility available  <a href="#code">here</a>
----
+<table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td><strong>MID</strong> String(20) Mandatory</td><td>This is a unique identifier provided to every merchant by Paytm. MID is part of your account credentials and is different on staging and production environment. Your staging MIDs is available <a href={`${configConstant.apiUrl.apiHost}/next/apikeys?src=dev`} target="_blank">here</a> &amp; production MID will be available once your activation is complete</td></tr><tr><td><strong>ORDERID</strong> String(50) Mandatory</td><td>Order ID is merchant’s unique reference ID for a transaction passed in the transaction payload. This is Order ID for which the transaction status needs to be fetched</td></tr><tr><td><strong>CHECKSUMHASH</strong> String(108) Mandatory</td><td>Signature to avoid tampering. Generated using server side checksum utility available  <a href="#code">here</a></td></tr></tbody></table>
 
 <div className={`${style.space10}`}></div>
 
